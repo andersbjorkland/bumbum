@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  pgdb:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdb_data:/var/lib/postgresql/data
+
+volumes:
+  pgdb_data:
