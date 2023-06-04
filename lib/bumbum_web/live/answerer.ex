@@ -2,9 +2,7 @@ defmodule BumbumWeb.Live.Answerer do
   use BumbumWeb, :live_view
   require Logger
 
-  def mount(_params, session, socket) do
-    Logger.info(session: session)
-
+  def mount(_params, _session, socket) do
     task = Task.async(fn ->
       Logger.info("Start loading models")
       model()
@@ -25,7 +23,7 @@ defmodule BumbumWeb.Live.Answerer do
     {:ok, socket}
   end
 
-  def handle_info({_pid, task}, socket) do
+  def handle_info({:update_status, task}, socket) do
     Logger.info(info: "Handling info!")
     timeout = 60000
     result = case Task.yield(task, timeout) do

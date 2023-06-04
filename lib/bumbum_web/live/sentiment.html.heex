@@ -1,0 +1,25 @@
+<h1>Hello Sentiment!</h1>
+<p>Status: <%= @status %></p>
+<form phx-submit="submit" class={
+    if @status != "ready" do
+        "hidden"
+    end
+}>
+    <div class="flex flex-col gap-8">
+        <div class="flex flex-col">
+            <label for="context">Input:</label>
+            <textarea name="context" id="context" cols="30" rows="10"><%= @input %></textarea>
+        </div>
+        <input class="bg-blue-600 text-white p-4 w-48 hover:bg-blue-800" type="submit" value="Submit">
+    </div>
+</form>
+<div class={
+    if @status != "ready" do
+        "hidden"
+    end
+}>
+    <div class="flex flex-col gap-2 mt-12">
+        <p>Answer: <%= @output %></p>
+        <p>Score: <%= @score %></p>
+    </div>
+</div>

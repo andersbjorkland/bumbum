@@ -18,7 +18,8 @@ defmodule BumbumWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    live "/imager", Live.Answerer
+    live "/answer", Live.Answerer
+    live "/sentiment", Live.Sentiment
   end
 
   # Other scopes may use custom stacks.
