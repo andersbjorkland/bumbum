@@ -70,5 +70,5 @@ defmodule BumbumWeb.Live.Sentiment do
     {:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "distilbert-base-uncased"})
 
     %{sentiment: sentiment, tokenizer: tokenizer}
-end
+  end
 end

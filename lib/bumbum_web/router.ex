@@ -20,6 +20,7 @@ defmodule BumbumWeb.Router do
     get "/", PageController, :home
     live "/answer", Live.Answerer
     live "/sentiment", Live.Sentiment
+    live "/token", Live.TextToken
   end
 
   # Other scopes may use custom stacks.

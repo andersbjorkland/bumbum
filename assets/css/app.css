@@ -3,3 +3,21 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+.LOC {
+    @apply text-purple-600;
+}
+
+.MISC {
+    @apply text-orange-600;
+}
+
+.ORG {
+    @apply text-blue-600;
+}
+.PER {
+    @apply text-green-600;
+}
+
+.term-class {
+    font-size: 0.5em;
+}
